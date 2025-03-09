@@ -214,6 +214,74 @@ border: 7px solid #ffffff;
     justify-content: space-between;
     align-items: center;
 }
+/* Top Section Styling */
+.leaderboard-top {
+    background-color: #ffffff; /* Different color for the top section */
+    padding: 15px 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leaderboard-top h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.close-btn:hover {
+    color: #ff5555; /* Change color on hover */
+}
+
+/* Leaderboard Content Styling */
+.leaderboard-content {
+    padding: 20px;
+    height: calc(100% - 70px); /* Adjust height to fit remaining space */
+    overflow-y: auto;
+}
+
+/* Scrollbar Styling */
+.leaderboard-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.leaderboard-content::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.leaderboard-content::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.leaderboard-content::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #leaderboardDiv {
+        width: 90%;
+        height: 70%;
+    }
+}
 
   
 </style>
