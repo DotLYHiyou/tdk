@@ -727,6 +727,27 @@ border: 7px solid #ffffff;
 
 
 
+<script>
+  const div = document.getElementById('leaderboardDiv');
+  let dragging = false;
+
+  div.onmousedown = (e) => {
+    dragging = true;
+    let offsetX = e.clientX - div.offsetLeft;
+    let offsetY = e.clientY - div.offsetTop;
+
+    document.onmousemove = (e) => {
+      if (dragging) {
+        div.style.left = `${e.clientX - offsetX}px`;
+        div.style.top = `${e.clientY - offsetY}px`;
+      }
+    };
+
+    document.onmouseup = () => {
+      dragging = false;
+    };
+  };
+</script>
 
 
 
