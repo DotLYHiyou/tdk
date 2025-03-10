@@ -728,13 +728,15 @@ border: 7px solid #ffffff;
 
 
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
   const div = document.getElementById('leaderboardDiv');
   let dragging = false;
+  let offsetX, offsetY;
 
   div.onmousedown = (e) => {
     dragging = true;
-    let offsetX = e.clientX - div.offsetLeft;
-    let offsetY = e.clientY - div.offsetTop;
+    offsetX = e.clientX - div.offsetLeft;
+    offsetY = e.clientY - div.offsetTop;
 
     document.onmousemove = (e) => {
       if (dragging) {
@@ -742,11 +744,13 @@ border: 7px solid #ffffff;
         div.style.top = `${e.clientY - offsetY}px`;
       }
     };
-
-    document.onmouseup = () => {
-      dragging = false;
-    };
   };
+
+  document.onmouseup = () => {
+    dragging = false;
+  };
+});
+
 </script>
 
 
