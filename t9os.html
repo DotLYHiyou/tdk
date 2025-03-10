@@ -107,6 +107,8 @@
     height: 500px; 
     overflow-x: hidden;
     overflow-y: auto;
+    animation: fadeIn 0.3s ease-in-out;
+
   }
   #settingsDiv {
     display: none;
@@ -217,7 +219,7 @@ border: 7px solid #ffffff;
     align-items: center;
 }
 /* Top Section Styling */
-.leaderboard-top {
+.div-top {
     background-color: #363636; /* Different color for the top section */
     padding: 15px 20px;
     border-top-left-radius: 12px;
@@ -330,7 +332,7 @@ border: 7px solid #ffffff;
 <div id="leaderboardDiv">
  
 </section>
-<div class="leaderboard-top">
+<div class="div-top">
   <button class="close-btn" onclick="document.getElementById('leaderboardDiv').style.display = 'none';">×</button>
   <h2 class="lh2">Leaderboard</h2>
 </div>
@@ -385,10 +387,14 @@ border-radius:20px;
 </style>
 
 <div id="hiddenDiv">
-  <div class="gnav">
-
+ 
+  <div class="div-top">
+    <button class="close-btn" onclick="document.getElementById('leaderboardDiv').style.display = 'none';">×</button>
+    <h2 class="lh2">Games</h2>
   </div>
-     <h1 class="gtext">||-Games-||</h1>
+
+
+
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScaAq2bhgZipNNKUL74Q8FnKlPnPycsXZVVsLunrIfcoiR1tg/viewform?usp=sf_link">
         <img class="btn" src="https://reider71164.github.io/images/gamerequest.png">
              </a>
@@ -666,17 +672,18 @@ border-radius:20px;
     <img class="timg" src="fullscreen.png">
   </a>
 
-  <a onclick="apps()">
-    <img class="timg" src="apps1.png">
-  </a>
-
+  
 
 </div>
 
 
 
 <div id="settingsDiv">
-  <h1 class="seth">|| Settings ||</h1>
+  <div class="div-top">
+    <button class="close-btn" onclick="document.getElementById('leaderboardDiv').style.display = 'none';">×</button>
+    <h2 class="lh2">settings</h2>
+  </div>
+
   <a   onclick="openGame()"  class="round-btn">Hide url</a>
 <style>
    .round-btn {
