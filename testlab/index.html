@@ -176,7 +176,7 @@ border: 7px solid #ffffff;
     color: #ffffff;
     inset: 0;
     margin: auto;
-    position: fixed;
+    position: absolute;
     z-index: 1000;
     border-radius: 12px;
     width: 600px;
@@ -728,15 +728,17 @@ border: 7px solid #ffffff;
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
   const div = document.getElementById('leaderboardDiv');
   let dragging = false;
-  let offsetX, offsetY;
+  let offsetX = 0, offsetY = 0;
 
   div.onmousedown = (e) => {
     dragging = true;
-    offsetX = e.clientX - div.offsetLeft;
-    offsetY = e.clientY - div.offsetTop;
+    offsetX = e.clientX - div.getBoundingClientRect().left;
+    offsetY = e.clientY - div.getBoundingClientRect().top;
+
+    div.style.position = "absolute"; // Ensure it moves properly
 
     document.onmousemove = (e) => {
       if (dragging) {
@@ -748,8 +750,10 @@ border: 7px solid #ffffff;
 
   document.onmouseup = () => {
     dragging = false;
+    document.onmousemove = null; // Remove event when done
   };
 });
+
 
 </script>
 
