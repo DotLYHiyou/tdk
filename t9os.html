@@ -780,7 +780,20 @@ border-radius:20px;
 
 </head>
 
+<script>
+  // Disable text selection
+  document.addEventListener('mousedown', function(event) {
+      event.preventDefault();
+  });
 
+  document.addEventListener('selectstart', function(event) {
+      event.preventDefault();
+  });
+
+  document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+  });
+</script>
 
 
 
